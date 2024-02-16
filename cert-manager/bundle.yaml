@@ -1,0 +1,33 @@
+apiVersion: trust.cert-manager.io/v1alpha1
+kind: Bundle
+metadata:
+  name: ohdsi-certificate-authority  
+spec:
+  sources:
+  - useDefaultCAs: false
+
+  - secret:
+      name: "ohdsi-certificate-authority-tls"
+      key: "tls.crt"
+
+  - configMap:
+      name: nhs-certificates
+      key: root-nwsis-ca.crt
+      
+  - configMap:
+      name: nhs-certificates
+      key: sub-lth-ca
+
+  target:
+    configMap:
+      key: "ohdsi-certs.pem"
+    additionalFormats:
+      jks:
+        key: "ohdsi.jks"
+      pkcs12:
+        key: "ohdsi.p12"
+
+    namespaceSelector:
+      matchLabels:
+        lsc-sde.io/injectKeycloakCertificates: "true"
+        
