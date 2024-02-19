@@ -11,6 +11,16 @@ datasource:
   database: ohdsi
   user: "ohdsi@${postgresql_server}"
 
+security:
+  provider: "AtlasRegularSecurity"
+  oid:
+    clientId: "ohdsi"
+    apiSecret:
+      secretName: "ohdsi"
+      key: "ohdsi-client-secret"
+    url: "https://${dns_prefix}keycloak.${private_dnz_zone}/realms/lsc-sde/.well-known/openid-configuration"
+    redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+
 ingress:
   host: ${dns_prefix}ohdsi.${private_dnz_zone}
   annotations:
