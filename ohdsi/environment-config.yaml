@@ -2,14 +2,14 @@ flyway:
   datasource:
     hostname: "${postgresql_host}"
     port: "5432"
-    database: "${ohdsi_database}"
-    user: "${ohdsi_user}"
+    database: ohdsi
+    user: ohdsi
 
 datasource:
   hostname: "${postgresql_host}"
   port: "5432"
-  database: "${ohdsi_database}"
-  user: "${ohdsi_user}"
+  database: ohdsi
+  user: ohdsi
 
 ingress:
   host: ${dns_prefix}odhsi.${private_dnz_zone}
