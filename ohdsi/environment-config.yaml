@@ -17,7 +17,7 @@ ingress:
     xlscsde.nhs.uk/dns-record: ohdsi
     nginx.ingress.kubernetes.io/ssl-redirect : "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
   tls:
     enabled: true
     secretName: ${dns_prefix}ohdsi.${private_dnz_zone}-tls
