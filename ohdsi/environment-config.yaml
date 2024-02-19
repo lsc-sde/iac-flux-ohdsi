@@ -1,12 +1,12 @@
 flyway:
   datasource:
-    hostname: "${postgresql_host}"
+    hostname: "${postgresql_server}"
     port: "5432"
     database: ohdsi
     user: ohdsi
 
 datasource:
-  hostname: "${postgresql_host}"
+  hostname: "${postgresql_server}"
   port: "5432"
   database: ohdsi
   user: ohdsi
