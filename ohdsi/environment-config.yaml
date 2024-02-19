@@ -12,7 +12,7 @@ datasource:
   user: "ohdsi@${postgresql_server}"
 
 ingress:
-  host: ${dns_prefix}odhsi.${private_dnz_zone}
+  host: ${dns_prefix}ohdsi.${private_dnz_zone}
   annotations:
     xlscsde.nhs.uk/dns-record: ohdsi
     nginx.ingress.kubernetes.io/ssl-redirect : "true"
@@ -20,4 +20,4 @@ ingress:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
   tls:
     enabled: true
-    secretName: ${dns_prefix}odhsi.${private_dnz_zone}-tls
+    secretName: ${dns_prefix}ohdsi.${private_dnz_zone}-tls
