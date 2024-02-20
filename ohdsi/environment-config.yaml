@@ -6,6 +6,8 @@ flyway:
     user: "ohdsi@${postgresql_server}"
 
 webapi:
+  truststore:
+    path: /mnt/truststore/keycloak.jks
   volumes:
   - name: truststore-volume
     configMap:
@@ -13,7 +15,7 @@ webapi:
       items:
       - key: keycloak.jks
         path: keycloak.jks
-        
+
   volumeMounts:
   - mountPath: /mnt/truststore
     name: truststore-volume
