@@ -11,7 +11,7 @@ webapi:
   volumes:
   - name: truststore-volume
     configMap:
-    - name: keycloak-certificate-authority
+      name: keycloak-certificate-authority
       items:
       - key: keycloak.jks
         path: cacerts
