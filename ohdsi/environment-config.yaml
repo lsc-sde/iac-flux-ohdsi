@@ -7,17 +7,18 @@ flyway:
 
 webapi:
   truststore:
-    path: /mnt/truststore/keycloak.jks
+    path: /usr/local/openjdk-8/lib/security/cacerts
   volumes:
   - name: truststore-volume
-    configMap:
-      name: keycloak-certificate-authority
-      items:
-      - key: keycloak.jks
-        path: keycloak.jks
+    projected:
+      configMap:
+      - name: keycloak-certificate-authority
+        items:
+        - key: keycloak.jks
+          path: cacerts
 
   volumeMounts:
-  - mountPath: /mnt/truststore
+  - mountPath: /usr/local/openjdk-8/lib/security
     name: truststore-volume
     readOnly: true
   
