@@ -31,6 +31,10 @@ datasource:
 
 security:
   provider: "AtlasRegularSecurity"
+  oauth:
+    callback:
+      api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
+      ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
   oid:
     enabled: true
     clientId: "ohdsi"
