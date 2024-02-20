@@ -5,6 +5,21 @@ flyway:
     database: ohdsi
     user: "ohdsi@${postgresql_server}"
 
+webapi:
+  volumes:
+  - name: truststore-volume
+    configMap:
+      name: keycloak-certificate-authority
+      items:
+      - key: keycloak.jks
+        path: keycloak.jks
+        
+  volumeMounts:
+  - mountPath: /mnt/truststore
+    name: truststore-volume
+    readOnly: true
+  
+
 datasource:
   hostname: "${postgresql_server}"
   port: "5432"
