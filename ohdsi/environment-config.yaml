@@ -29,20 +29,20 @@ datasource:
   database: ohdsi
   user: "ohdsi@${postgresql_server}"
 
-security:
-  provider: "AtlasRegularSecurity"
-  oauth:
-    callback:
-      api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
-      ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
-  oid:
-    enabled: false
-    clientId: "ohdsi"
-    apiSecret:
-      secretName: "ohdsi"
-      key: "ohdsi-client-secret"
-    url: "https://${dns_prefix}keycloak.${private_dnz_zone}/realms/lsc-sde/.well-known/openid-configuration"
-    redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+# security:
+#   provider: "AtlasRegularSecurity"
+#   oauth:
+#     callback:
+#       api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
+#       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+#   oid:
+#     enabled: false
+#     clientId: "ohdsi"
+#     apiSecret:
+#       secretName: "ohdsi"
+#       key: "ohdsi-client-secret"
+#     url: "https://${dns_prefix}keycloak.${private_dnz_zone}/realms/lsc-sde/.well-known/openid-configuration"
+#     redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
 
 ingress:
   host: ${dns_prefix}ohdsi.${private_dnz_zone}
