@@ -30,7 +30,7 @@ datasource:
   user: "ohdsi@${postgresql_server}"
 
 security:
-#   provider: "AtlasRegularSecurity"
+  provider: "" #"AtlasRegularSecurity"
   oauth:
     callback:
       urlResolver: ""
