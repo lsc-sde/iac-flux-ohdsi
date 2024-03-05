@@ -29,12 +29,13 @@ datasource:
   database: ohdsi
   user: "ohdsi@${postgresql_server}"
 
-# security:
+ security:
 #   provider: "AtlasRegularSecurity"
-#   oauth:
-#     callback:
+   oauth:
+     callback:
 #       api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
 #       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+      urlResolver: ""
 #   oid:
 #     enabled: false
 #     clientId: "ohdsi"
