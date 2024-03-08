@@ -1,3 +1,18 @@
+atlas:
+  image: lscsde/ohdsi-atlas-base:0.1.0
+  env:
+  - name: USER_AUTHENTICATION
+    value: "true"
+  
+  - name: OID_PROVIDER_ENABLED
+    value: "true"
+
+  - name: SUPPORT_MAIL
+    value: "shaun.turner1@nhs.net"
+
+  - name: APP_NAME
+    value: "LSCSDE - OHDSI Atlas"
+
 flyway:
   datasource:
     hostname: "${postgresql_server}"
@@ -34,16 +49,16 @@ security:
   oauth:
     callback:
       urlResolver: ""
-#       api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
-#       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
-#   oid:
-#     enabled: false
-#     clientId: "ohdsi"
-#     apiSecret:
-#       secretName: "ohdsi"
-#       key: "ohdsi-client-secret"
-#     url: "https://${dns_prefix}keycloak.${private_dnz_zone}/realms/lsc-sde/.well-known/openid-configuration"
-#     redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+      api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
+      ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+  oid:
+    enabled: false
+    clientId: "ohdsi"
+    apiSecret:
+      secretName: "ohdsi"
+      key: "ohdsi-client-secret"
+    url: "https://${dns_prefix}keycloak.${private_dnz_zone}/realms/lsc-sde/.well-known/openid-configuration"
+    redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
 
 ingress:
   host: ${dns_prefix}ohdsi.${private_dnz_zone}
