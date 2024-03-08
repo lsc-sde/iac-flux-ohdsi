@@ -1,6 +1,9 @@
 atlas:
   image: lscsde/ohdsi-atlas-base:0.1.0
   env:
+  - name: USE_DYNAMIC_WEBAPI_URL
+    value: "true"
+    
   - name: USER_AUTHENTICATION
     value: "true"
   
