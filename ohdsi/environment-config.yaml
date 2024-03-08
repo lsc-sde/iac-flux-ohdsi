@@ -64,11 +64,11 @@ security:
       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
   oid:
     enabled: true
-    clientId: "ohdsi"
+    clientId: "${ohdsi_client_id}"
     apiSecret:
       secretName: "ohdsi"
-      key: "ohdsi-client-secret"
-    url: "https://${dns_prefix}keycloak.${private_dnz_zone}/realms/lsc-sde/.well-known/openid-configuration"
+      key: "ohdsi-appreg-client-secret"
+    url: "https://login.microsoftonline.com/f12f0279-8a84-4068-8322-7a6fb0f839b8/v2.0/.well-known/openid-configuration"
     redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
 
 ingress:
