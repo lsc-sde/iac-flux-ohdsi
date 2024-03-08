@@ -3,7 +3,7 @@ atlas:
   env:
   - name: USE_DYNAMIC_WEBAPI_URL
     value: "true"
-    
+
   - name: USER_AUTHENTICATION
     value: "true"
   
@@ -48,10 +48,10 @@ datasource:
   user: "ohdsi@${postgresql_server}"
 
 security:
-  provider: "" #"AtlasRegularSecurity"
+  provider: "AtlasRegularSecurity"
   oauth:
     callback:
-      urlResolver: ""
+      #urlResolver: ""
       api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
   oid:
