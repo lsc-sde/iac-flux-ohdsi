@@ -16,6 +16,12 @@ atlas:
   - name: APP_NAME
     value: "LSCSDE - OHDSI Atlas"
 
+  - name: CLEAR_LOCAL_STORAGE
+    value: "true"
+
+  - name: OID_PROVIDER_NAME
+    value: "Microsoft Entra ID"
+
 flyway:
   datasource:
     hostname: "${postgresql_server}"
