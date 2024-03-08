@@ -52,7 +52,7 @@ security:
       api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
   oid:
-    enabled: false
+    enabled: true
     clientId: "ohdsi"
     apiSecret:
       secretName: "ohdsi"
