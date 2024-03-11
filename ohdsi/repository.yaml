@@ -4,4 +4,4 @@ metadata:
   name: ohdsi
 spec:
   interval: 5m
-  url: https://lsc-sde.github.io/lsc-sde/iac/helm/
+  url: https://lsc-sde.github.io/iac-helm-repository/
