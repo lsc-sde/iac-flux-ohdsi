@@ -58,11 +58,6 @@ security:
   shiro:
     successUrl: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/login/openid?redirectUrl=/home
   provider: "AtlasRegularSecurity"
-  auth:
-    jdbc:
-      enabled: "false"
-    openid:
-      enabled: "true"
   oauth:
     callback:
       #urlResolver: ""
