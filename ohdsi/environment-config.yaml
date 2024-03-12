@@ -31,8 +31,8 @@ flyway:
 
 webapi:
   image: lscsde/ohdsi-webapi:0.1.11
-  truststore:
-    path: /usr/local/openjdk-8/lib/security/cacerts
+  # truststore:
+  #   path: /usr/local/openjdk-8/lib/security/cacerts
   # volumes:
   # - name: truststore-volume
   #   configMap:
