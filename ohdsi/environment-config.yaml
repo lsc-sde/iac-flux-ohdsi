@@ -1,26 +1,29 @@
 atlas:
-  image: lscsde/ohdsi-atlas-base:0.1.0
+  image: lscsde/ohdsi-atlas-base:0.1.1
   env:
   - name: USE_DYNAMIC_WEBAPI_URL
     value: "true"
 
-  - name: USER_AUTHENTICATION
+  - name: ATLAS_USER_AUTH_ENABLED
     value: "true"
   
-  - name: OID_PROVIDER_ENABLED
+  - name: ATLAS_SECURITY_OID_PROVIDER_ENABLED
     value: "true"
 
-  - name: SUPPORT_MAIL
+  - name: ATLAS_SUPPORT_MAIL
     value: "shaun.turner1@nhs.net"
 
-  - name: APP_NAME
+  - name: ATLAS_INSTANCE_NAME
     value: "LSCSDE - OHDSI Atlas"
 
-  - name: CLEAR_LOCAL_STORAGE
+  - name: ATLAS_CLEAR_LOCAL_STORAGE
     value: "true"
 
-  - name: OID_PROVIDER_NAME
+  - name: ATLAS_SECURITY_OID_PROVIDER_NAME
     value: "Microsoft Entra ID"
+
+  - name: ATLAS_SECURITY_PROVIDER_ENABLED
+    value: "false"
 
 flyway:
   datasource:
