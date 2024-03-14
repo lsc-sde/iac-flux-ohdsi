@@ -33,6 +33,7 @@ flyway:
     user: "ohdsi@${postgresql_server}"
 
 webapi:
+  java_opts: --debug
   image: lscsde/ohdsi-webapi:0.1.11
   # truststore:
   #   path: /usr/local/openjdk-8/lib/security/cacerts
