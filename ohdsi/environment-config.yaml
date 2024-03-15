@@ -91,8 +91,8 @@ ingress:
     xlscsde.nhs.uk/dns-record: ohdsi
     nginx.ingress.kubernetes.io/ssl-redirect : "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
-    nginx.ingress.kubernetes.io/proxy-redirect-from: "https://${dns_prefix}ohdsi.${private_dnz_zone}:8080"
-    nginx.ingress.kubernetes.io/proxy-redirect-to: "https://${dns_prefix}ohdsi.${private_dnz_zone}"
+    nginx.ingress.kubernetes.io/proxy-redirect-from: "~*/(.*)$"
+    nginx.ingress.kubernetes.io/proxy-redirect-to: "https://${dns_prefix}ohdsi.${private_dnz_zone}/$1"
 
   tls:
     enabled: true
