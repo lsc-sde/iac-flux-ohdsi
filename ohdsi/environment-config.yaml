@@ -40,7 +40,7 @@ webapi:
         schema: "webapi_security"
         url: "jdbc:postgresql://${postgresql_server}:5432/ohdsi"
         driverClassName: "org.postgresql.Driver"
-        username: "ohdsi"
+        username: "ohdsi@${postgresql_server}"
         password:
           secret: "ohdsi"
           key: "db-password"
