@@ -33,7 +33,7 @@ flyway:
     user: "ohdsi@${postgresql_server}"
 
 webapi:
-  image: lscsde/ohdsi-webapi:0.1.11
+  image: ohdsi/webapi:2.14.0
   security:
     db:
       datasource:
