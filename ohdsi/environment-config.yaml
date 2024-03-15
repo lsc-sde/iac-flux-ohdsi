@@ -34,6 +34,16 @@ flyway:
 
 webapi:
   image: lscsde/ohdsi-webapi:0.1.11
+  security:
+    db:
+      datasource:
+        schema: "webapi_security"
+        url: "jdbc:postgresql://${postgresql_server}:5432/ohdsi"
+        driverClassName: "org.postgresql.Driver"
+        username: "ohdsi"
+        password:
+          secret: "ohdsi"
+          key: "db-password"
   # truststore:
   #   path: /usr/local/openjdk-8/lib/security/cacerts
   # volumes:
