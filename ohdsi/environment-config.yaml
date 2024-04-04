@@ -5,10 +5,10 @@ atlas:
     value: "true"
 
   - name: ATLAS_USER_AUTH_ENABLED
-    value: "true"
+    value: "false"
   
   - name: ATLAS_SECURITY_OID_PROVIDER_ENABLED
-    value: "true"
+    value: "false"
 
   - name: ATLAS_SUPPORT_MAIL
     value: "shaun.turner1@nhs.net"
@@ -70,14 +70,14 @@ datasource:
 security:
   shiro:
     successUrl: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/login/openid?redirectUrl=/home
-  provider: "AtlasRegularSecurity"
+  provider: ""
   oauth:
     callback:
       #urlResolver: ""
       api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
       ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
   oid:
-    enabled: true
+    enabled: false
     clientId: "${ohdsi_client_id}"
     apiSecret:
       secretName: "ohdsi"
