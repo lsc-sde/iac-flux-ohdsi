@@ -1,5 +1,5 @@
 atlas:
-  image: lscsde/ohdsi-atlas-base:0.1.2
+  image: lscsde/ohdsi-atlas-base:0.1.3
   env:
   - name: USE_DYNAMIC_WEBAPI_URL
     value: "true"
@@ -33,7 +33,7 @@ flyway:
     user: "ohdsi@${postgresql_server}"
 
 webapi:
-  image: ohdsi/webapi:2.14.1
+  image: ohdsi/webapi:2.14.0
   security:
     db:
       datasource:
