@@ -1,5 +1,5 @@
 atlas:
-  image: lscsde/ohdsi-atlas-base:0.1.1
+  image: lscsde/ohdsi-atlas-base:0.1.2
   env:
   - name: USE_DYNAMIC_WEBAPI_URL
     value: "true"
