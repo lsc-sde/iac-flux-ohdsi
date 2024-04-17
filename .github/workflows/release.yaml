@@ -11,5 +11,5 @@ jobs:
     uses: lsc-sde/lsc-sde/.github/workflows/flux-release.yaml@main
     with:
       directory: iac/flux/ohdsi
-      yamlPath: ohdsi_branch
+      yamlPath: ohdsi
     secrets: inherit
