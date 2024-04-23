@@ -69,13 +69,13 @@ datasource:
 
 security:
   shiro:
-    successUrl: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/login/openid?redirectUrl=/home
+    successUrl: https://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}/WebAPI/user/login/openid?redirectUrl=/home
   provider: "AtlasRegularSecurity"
   oauth:
     callback:
       #urlResolver: ""
-      api: https://${dns_prefix}ohdsi.${private_dnz_zone}/WebAPI/user/oauth/callback
-      ui: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+      api: https://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}/WebAPI/user/oauth/callback
+      ui: "https://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}/atlas/#/welcome"
   oid:
     enabled: true
     clientId: "${ohdsi_client_id}"
@@ -83,17 +83,17 @@ security:
       secretName: "ohdsi"
       key: "ohdsi-appreg-client-secret"
     url: "https://login.microsoftonline.com/f12f0279-8a84-4068-8322-7a6fb0f839b8/v2.0/.well-known/openid-configuration"
-    redirectUrl: "https://${dns_prefix}ohdsi.${private_dnz_zone}/atlas/#/welcome"
+    redirectUrl: "https://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}/atlas/#/welcome"
 
 ingress:
-  host: ${dns_prefix}ohdsi.${private_dnz_zone}
+  host: ${environment_dns_prefix}ohdsi.${private_dnz_zone}
   annotations:
-    xlscsde.nhs.uk/dns-record: ohdsi
+    xlscsde.nhs.uk/dns-record: ohdsi${environment_dns_suffix}
     nginx.ingress.kubernetes.io/ssl-redirect : "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
-    nginx.ingress.kubernetes.io/proxy-redirect-from: "http://${dns_prefix}ohdsi.${private_dnz_zone}:8080"
-    nginx.ingress.kubernetes.io/proxy-redirect-to: "https://${dns_prefix}ohdsi.${private_dnz_zone}"
+    nginx.ingress.kubernetes.io/proxy-redirect-from: "http://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}:8080"
+    nginx.ingress.kubernetes.io/proxy-redirect-to: "https://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}"
 
   tls:
     enabled: true
-    secretName: ${dns_prefix}ohdsi.${private_dnz_zone}-tls
+    secretName: ${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}-tls
