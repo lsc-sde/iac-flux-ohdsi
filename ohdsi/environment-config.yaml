@@ -86,7 +86,7 @@ security:
     redirectUrl: "https://${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}/atlas/#/welcome"
 
 ingress:
-  host: ${environment_dns_prefix}ohdsi.${private_dnz_zone}
+  host: ${environment_dns_prefix}ohdsi${environment_dns_suffix}.${private_dnz_zone}
   annotations:
     xlscsde.nhs.uk/dns-record: ohdsi${environment_dns_suffix}
     nginx.ingress.kubernetes.io/ssl-redirect : "true"
