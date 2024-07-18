@@ -5,6 +5,7 @@ resources:
 - release.yaml
 - repository.yaml
 - secret.yaml
+- networkpolicy.yaml
 configMapGenerator:
   - name: environment-config
     files:
