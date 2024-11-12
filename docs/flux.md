@@ -1,6 +1,7 @@
 ---
 title: FluxCD
 parent: OHDSI
+grand_parent: Analytics Tools
 layout: page
 ---
 
